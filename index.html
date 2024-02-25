@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      const { useState } = React;
+      // Define the App component
+      const App = () => {
+        const [images, setImages] = useState([
+                    {
+			url:"https://www.bigbasket.com/media/uploads/p/xxl/30007033_2-fresho-rose-red-flower.jpg",
+			},
+			{
+			url:"https://images.pexels.com/photos/39517/rose-flower-blossom-bloom-39517.jpeg?cs=srgb&dl=pexels-pixabay-39517.jpg&fm=jpg",
+			},
+			{
+			url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bachelor%27s_button%2C_Basket_flower%2C_Boutonniere_flower%2C_Cornflower_-_3.jpg/1200px-Bachelor%27s_button%2C_Basket_flower%2C_Boutonniere_flower%2C_Cornflower_-_3.jpg",
+			},
+			{
+            url: "https://5.imimg.com/data5/KJ/MG/KC/SELLER-38773420/red-rose-flower-500x500.jpg",
+          },{
+            url: "https://www.ugaoo.com/cdn/shop/articles/shutterstock_223679731.jpg?v=1661873480",
+          },
+		  {
+            url: "https://nationaltoday.com/wp-content/uploads/2022/07/6-National-Flower-Day.jpg",
+          },
+		  {
+            url: "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_640.jpg",
+          },
+		  {
+            url: "https://florette.ae/cdn/shop/collections/Florette_Venice_Bouquet_July_5_22_480x480_964dcd53-3135-46eb-8f65-8ea0579f1754_1285x1246.webp?v=1671181266",
+          },
+		  {
+            url: "https://www.shutterstock.com/image-photo/close-bunch-bright-colourful-flowers-260nw-2254810321.jpg",
+          },
+		  {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR21Za2teyCH_cF90mePPJ0_phqO1nQid7XEBBJYG6EV2zphtEZ9tRjkvET7qh01CEoAjA&usqp=CAU",
+          },
+		  {
+            url: "https://www.sarkarinaukriexams.com/images/import/sne4446407201.png",
+          },
+          {
+            url: "https://www.sarkarinaukriexams.com/images/import/sne86811832.png",
+          },
+          {
+            url: "https://www.sarkarinaukriexams.com/images/import/sne10272423583.png",
+          },
+          {
+            url: "https://www.sarkarinaukriexams.com/images/import/sne1586776004.png",
+          },
+          {
+			url:"https://www.bigbasket.com/media/uploads/p/xxl/30007033_2-fresho-rose-red-flower.jpg",
+			},
+			{
+			url:"https://images.pexels.com/photos/39517/rose-flower-blossom-bloom-39517.jpeg?cs=srgb&dl=pexels-pixabay-39517.jpg&fm=jpg",
+			},
+			{
+			url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bachelor%27s_button%2C_Basket_flower%2C_Boutonniere_flower%2C_Cornflower_-_3.jpg/1200px-Bachelor%27s_button%2C_Basket_flower%2C_Boutonniere_flower%2C_Cornflower_-_3.jpg",
+			},
+			{
+            url: "https://5.imimg.com/data5/KJ/MG/KC/SELLER-38773420/red-rose-flower-500x500.jpg",
+          },{
+            url: "https://www.ugaoo.com/cdn/shop/articles/shutterstock_223679731.jpg?v=1661873480",
+          },
+		  {
+            url: "https://nationaltoday.com/wp-content/uploads/2022/07/6-National-Flower-Day.jpg",
+          },
+		  {
+            url: "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_640.jpg",
+          },
+		  {
+            url: "https://florette.ae/cdn/shop/collections/Florette_Venice_Bouquet_July_5_22_480x480_964dcd53-3135-46eb-8f65-8ea0579f1754_1285x1246.webp?v=1671181266",
+          },
+		  {
+            url: "https://www.shutterstock.com/image-photo/close-bunch-bright-colourful-flowers-260nw-2254810321.jpg",
+          },
+		  {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR21Za2teyCH_cF90mePPJ0_phqO1nQid7XEBBJYG6EV2zphtEZ9tRjkvET7qh01CEoAjA&usqp=CAU",
+          },
+		   {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR21Za2teyCH_cF90mePPJ0_phqO1nQid7XEBBJYG6EV2zphtEZ9tRjkvET7qh01CEoAjA&usqp=CAU",
+          },
+
+
+		
+	   ]);
+
+        
+
+        
+
+        return (
+          <div className="container">
+            <h3>Upload the image</h3>
+            <div className="image-container">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  draggable="true">
+                  <img src={image.url} alt="Image" />
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .image-container {
+        display: flex;
+        overflow-x: auto;
+        width: 100%;
+      }
+
+      .image-container img {
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        cursor: grab;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+      }
+
+      .image-container img:active {
+        cursor: grabbing;
+      }
+
+      /* Optional styles for better visual feedback during dragging */
+      .image-container img:hover {
+        transform: scale(1.1);
+        z-index: 1;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .image-container img:active {
+        transform: scale(1.2);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </body>
+</html>
